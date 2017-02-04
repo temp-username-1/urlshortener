@@ -11,9 +11,9 @@ Upon initiating the project, you can navigate to `localhost:8080/swagger-ui.html
 
 For a quick overview, keep reeding.
 
-#### POST /documents
+#### POST /urls
 
-To create/insert a new document :
+To create/insert a new url :
 ```sh
 $ curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
   "author": "van der Aalst",

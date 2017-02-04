@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-
 @RestController
 @RequestMapping("/urls")
 public class UrlController {
@@ -22,7 +20,7 @@ public class UrlController {
             @ApiResponse(code = 400, message = "Bad Request")
     })
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity shortenUrl(@RequestBody @Valid UrlDto urlDto) {
+    public ResponseEntity shortenUrl(@RequestBody UrlDto urlDto) {
         return ResponseEntity.ok(UrlDto.format(urlShorteningService.shorten(urlDto.getUrl())));
     }
 
