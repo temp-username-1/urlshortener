@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.persistence.EntityNotFoundException;
-import java.net.URISyntaxException;
 
 @ControllerAdvice
 public class ExceptionHandlingController {
@@ -15,6 +14,6 @@ public class ExceptionHandlingController {
     public void notFound() {}
 
     @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason="Malformed URI")
-    @ExceptionHandler(URISyntaxException.class)
+    @ExceptionHandler(IllegalArgumentException.class)
     public void malformedUri() {}
 }

@@ -23,7 +23,7 @@ public class UrlRedirectionService {
                 shortenedUrlEntityDao.findByRetrievalKey(retrievalKey)
         ).orElseThrow(() -> new EntityNotFoundException("Could not find uri with key : " + retrievalKey));
 
-        shortenedUrlEntity.setClicks(shortenedUrlEntity.getClicks() + 1);
+        shortenedUrlEntity.setRedirections(shortenedUrlEntity.getRedirections() + 1);
         shortenedUrlEntityDao.save(shortenedUrlEntity);
 
         return shortenedUrlEntity.getUri();

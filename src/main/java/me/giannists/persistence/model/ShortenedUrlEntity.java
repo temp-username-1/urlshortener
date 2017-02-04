@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
-import java.math.BigInteger;
 import java.net.URI;
 import java.time.Instant;
 import java.util.Date;
@@ -21,7 +20,7 @@ public class ShortenedUrlEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    BigInteger id;
+    int id;
 
     @CreatedDate
     @Column(name = "created", updatable = false)
@@ -31,7 +30,7 @@ public class ShortenedUrlEntity {
 
     URI uri;
 
-    int clicks;
+    int redirections;
 
     @PrePersist
     public void onCreate() {
